@@ -22,7 +22,7 @@ In order to prepare our cluster, we have to go through some setup steps.  Fortun
 For our Pyspark script to work we will have to create an s3 bucket to store the files, so for the purposes of this ReadMe, this step is not optional. Make sure to change the name of the s3 bucket for the output file in etl.py after creating it.  In the code of etl.py change the name of the bucket to your bucket name that you created in step 4 of Tran’s guide.  Switch _s3-for-emr-cluster2_ to your cluster name. See the code below.
 
 ```python
-output_data = "s3a://s3-for-emr-cluster2"}
+output_data = "s3a://s3-for-emr-cluster2"
 ```
 
 Once you’ve created your cluster in the next step, you will have to complete step 8 from Tran's guide.  On my AWS I only had to complete this one time on the first cluster I created.  All subsequent clustered had step 8 completed already.
@@ -146,3 +146,7 @@ The script will take about 30 minutes to run.  After the script is done, the fin
 ```bash
 aws emr terminate-clusters --cluster-id {your cluster id}
 ```
+# Notes
+<sup>1</sup>["Data Lake - Wikipedia"](https://en.wikipedia.org/wiki/Data_lake#:~:text=A%20data%20lake%20is%20usually,advanced%20analytics%20and%20machine%20learning.)
+
+<sup>2</sup> ["AWS EMR - Amazon Web Services"](https://aws.amazon.com/emr/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
